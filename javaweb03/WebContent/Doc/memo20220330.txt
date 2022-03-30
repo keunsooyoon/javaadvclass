@@ -46,3 +46,22 @@ session 객체
 서버에서 데이터를 유지한다. (쿠키 는 유저측에서 데이터를 유지한다. )
 
 
+
+JDBC Java Database Connectivity JDBC는 자바에서 데이터베이스에
+쉽게 접근하도록 도와주는 연결 통로이다. 자바 프로그램이 데이터베이스의 검색과 
+수정을 위한 sql 문도 전송하고 결과도 받게된다. 
+
+JDBC를 사용하면 데이터베이스의 종류(mongo db, mysql, oracle...)와 
+상관 없이 데이터베이스 작업을 일관성 있게 처리할 수 있게 된다. 
+                                  oracle
+                                  Mysql
+자바 프로그램   -> JDBC 인터페이스              MSsql
+                                  MariaDB
+
+
+
+이클립스에서 JDBC를 이용하려면 사용하려는 프로젝트의 
+
+WebContent - WEB-INF - lib 위치에  다운받은 
+
+mysql-connector-java-8.0.28.jar 파일을 복사한다. 

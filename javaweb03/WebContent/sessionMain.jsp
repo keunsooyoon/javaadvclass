@@ -6,7 +6,7 @@ String sid = (String) session.getAttribute("id");
 if (sid == null) {
 	out.print("로그인 정보가 없습니다.");
 } else {
-	out.print("회원 페이지입니다");
+	out.print("회원 페이지입니다 . by 00홍길동");
 }
 
 %>
