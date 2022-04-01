@@ -9,7 +9,7 @@
 <body>
 <b>쿠키 생성</b>
 <%
-	Cookie cookie = new Cookie("id","admin"); //쿠키 객체 생성
+	Cookie cookie = new Cookie("id","00austin"); //쿠키 객체 생성
 	cookie.setMaxAge(300); //초단위 5분  쿠키 생존 기간 설정
 	response.addCookie(cookie);
 	
