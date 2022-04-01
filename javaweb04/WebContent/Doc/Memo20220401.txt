@@ -38,3 +38,33 @@ String sql = "DROP DATABASE univ2";//DB생성 sql 구문
 	rset = pstmt.executeQuery(); 
 
 
+* JSP 구문 실행 에러 발생시 처리 방법 
+
+
+file - properties - Java Build Path - Libraries - Add Liberary -  Server Runtime - Apache Tomcat - finish
+
+
+
+
+*프로젝트명을 주소 url 에서 감추는 방법
+
+하단의 Servers - Tomcat을 더블클릭 - Modules - 
+
+프로젝트명 누르고 우측 메뉴들 중 Edit - 
+
+Path: 에 / 만 남기고 삭제 - OK - ctrl-S 저장
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
