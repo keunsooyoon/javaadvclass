@@ -33,5 +33,8 @@ String sql = "DROP DATABASE univ2";//DB생성 sql 구문
 5. 테이블에서 데이터 가져오기
 
 	String sql = "SELECT * FROM student";
+	pstmt = conn.prepareStatement(sql);
+
+	rset = pstmt.executeQuery(); 
 
 
