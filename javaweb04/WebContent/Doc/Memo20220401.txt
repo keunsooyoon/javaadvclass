@@ -1,73 +1,37 @@
-프로젝트에서 데이터 베이스 연결방법
 
-1. WEB-INF - lib아래에  
+1. 데이터베이스 만들기
 
-WEB-INF/lib/mysql-connector-java-8.0.28.jar
-
-복사해서 넣는다. 
-
-잘 동작하는 지 코드로 확인
-<%
-//JDBC 드라이버 로딩 테스트
-
-	try {
-	Class.forName("com.mysql.jdbc.Driver");
-	out.print("JDBC Driver loading 성공!!<br>");
-	} catch (ClassNotFoundException err) {
-		out.print("JDBC Driver loading 실패!!<br>");
-	}
-
-%>
+String sql = "CREATE DATABASE univ2";//DB생성 sql 구문
 
 
-2. Connection 객체 생성
+2. 데이터베이스 삭제
 
-	String url = "jdbc:mysql://localhost:3306/";
-	String id = "root";
-	String pw = "0000";
+String sql = "DROP DATABASE univ2";//DB생성 sql 구문
+
+
+3. 테이블 만들기
+	String sql = "CREATE TABLE student("
+			+"hakbun int not null,"
+			+"name   varchar(10),"
+			+"dept   varchar(20),"
+			+"primary key(hakbun))";
 	
-	Connection conn = null;
-	
-	try {
-		conn = DriverManager.getConnection(url, id, pw);
-		out.print("SQL DB 연결 성공<br>");
-	} catch (SQLException sqlerr) {
-		out.print("SQL DB 연결 실패<br>");
-	}
+4. 테이블에 데이터 넣기
+
+	String hakbun = request.getParameter("hakbun");
+	String name = request.getParameter("name");
+	String dept = request.getParameter("dept");
 
 
+	String sql = "INSERT INTO student VALUES(?,?,?)";
+	pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, hakbun);
+		pstmt.setString(2, name);
+		pstmt.setString(3, dept);
+	pstmt.executeUpdate(); 
 
-3 Connection 닫기
-  닫지 않아도 자동으로 닫아주지만 예전엔 항상 반드시 직접 닫아 줘야만했기때문에
-  하위 호환성 유지를 위해서 관계적으로 다쓰고나면 닫아 준다. 
+5. 테이블에서 데이터 가져오기
 
-	} finally {
-		//데이터베이스 연결 종료 
-		if (conn != null) {
-			try {
-				conn.close();
-				out.print("SQL DB 연결 종료!!<br>");
-			}catch (Exception conerr) {
-				conerr.printStackTrace();
-			}
-		}
-
-
-
-4 Statement 객체 생성
-
-	PreparedStatement pstmt = null; // 구문객체
-
-
-		String sql = "CREATE DATABASE univ2";//DB생성 sql 구문
-		
-		pstmt = conn.prepareStatement(sql);//구문을 객체에 넣어서
-		
-		pstmt.executeUpdate();             //구문객체 실행
-
-
-# Time zone 문제로 디비 접근 문제 발생시 해결 방법.
-
-String url = "jdbc:mysql://localhost:3306/workdb?useUnicode=true&serverTimezone=Asia/Seoul";
+	String sql = "SELECT * FROM student";
 
 
