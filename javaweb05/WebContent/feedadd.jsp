@@ -20,11 +20,12 @@
 
 	String name = request.getParameter("name");
 	String content = request.getParameter("content");
-
-	String sql = "INSERT INTO feed VALUES(?,?)";
+	
+	String sql = "INSERT INTO feed VALUES(?,?,now())";
 	pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, name);
 		pstmt.setString(2, content);
+
 	pstmt.executeUpdate(); 
 	
 // DB 연결 종료
