@@ -26,6 +26,8 @@ if (cookies != null) {
 
 %>
 		<a href="cookie_create.jsp">[쿠키  생성]</a>
+		
+		<a href="cookie_edit.jsp">[쿠키  변경]</a>
 
 		<a href="cookie_delete.jsp">[쿠키  삭제]</a>
 
