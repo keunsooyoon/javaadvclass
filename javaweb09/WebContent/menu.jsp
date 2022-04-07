@@ -20,8 +20,8 @@
             회원관리
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">로그인</a></li>
-            <li><a class="dropdown-item" href="#">로그아웃</a></li>
+            <li><a class="dropdown-item" href="univ_db_std_form.jsp">로그인</a></li>
+            <li><a class="dropdown-item" href="univ_db_logout.jsp">로그아웃</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">회원가입</a></li>
             <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
