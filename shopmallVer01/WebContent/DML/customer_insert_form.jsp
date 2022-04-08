@@ -8,6 +8,7 @@
 <title>고객 정보 입력</title>
 </head>
 <body>
+
 <form method="post" action="customer_insert_db.jsp">
 <table>
 <caption>회원 정보 입력</caption>
