@@ -19,10 +19,12 @@ ResultSet rset = null;
 
 conn = DbConnClose.getConnection();
 
-String sql = "SELECT * FROM board WHERE board_id = ?";
+String sql = "SELECT * FROM board WHERE (board_id = ?)";
 pstmt = conn.prepareStatement(sql);
 	pstmt.setInt(1,id);
-rset = pstmt.executeQuery(sql);
+rset = pstmt.executeQuery();
+
+rset.next();
 
 String board_id = rset.getString("board_id");
 String board_name = rset.getString("board_name");
