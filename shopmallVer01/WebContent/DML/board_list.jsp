@@ -25,37 +25,34 @@ rset = stmt.executeQuery(sql);
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">작성자</th>
+      <th scope="col">제목</th>
+      <th scope="col">날짜</th>
     </tr>
   </thead>
   <tbody>
+  
+<%
+while (rset.next()){
+	String board_id = rset.getString("board_id");
+	String board_name = rset.getString("board_name");
+	String board_title = rset.getString("board_title");
+	String board_join_date = rset.getString("board_join_date");
+ %> 
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row"><%=board_id %></th>
+      <td><%=board_name %></td>
+      <td><a href="board_detail.jsp?id=<%=board_id %>"><%=board_title %></a></td>
+      <td><%=board_join_date %></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
+ <%} %>   
+ 
   </tbody>
 </table>
 
-
-
-
-
-
+<%
+DbConnClose.resourceClose(rset, stmt, conn);
 %>
 </body>
 </html>

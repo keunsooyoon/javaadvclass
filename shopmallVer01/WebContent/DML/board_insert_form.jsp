@@ -15,10 +15,6 @@
 <td colspan="2" style="background-color:white; text-align:right;">
 * 부분은 필수 입력사항입니다.</td></tr> 
 <tr>
-<th>*&nbsp; 아이디  &nbsp;</th>
-<td><input type="text" name="board_id" required></td>
-</tr>
-<tr>
 <th>*&nbsp; 이름  &nbsp;</th>
 <td><input type="text" name="board_name" required></td>
 </tr>
