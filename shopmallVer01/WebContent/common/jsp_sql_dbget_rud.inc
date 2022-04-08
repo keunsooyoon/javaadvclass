@@ -22,6 +22,4 @@
 	String cust_email = rset.getString("cust_email");
 	String cust_join_date = rset.getString("cust_join_date");
 
-	
-
 %>
