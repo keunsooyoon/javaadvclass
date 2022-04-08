@@ -23,7 +23,6 @@
 
 <%@ include file = "database_connect.inc" %>
 
-
 <%
 	
 // 디비 검색

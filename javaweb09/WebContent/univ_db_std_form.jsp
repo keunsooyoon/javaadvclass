@@ -32,7 +32,8 @@ if ((hakbun != null) && (name != null)) {
 </div>
 	
 	<div class = "container bg-warning shadow mx-auto mt-5 p-5 w-75">
-<form action="univ_db_std_check.jsp">
+<!-- <form action="univ_db_std_check.jsp">
+ --><form action="check.jsp">
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">학번</label>
   <input type="text" name = "hakbun" class="form-control" id="formGroupExampleInput" placeholder="학번을 입력하세요...">
