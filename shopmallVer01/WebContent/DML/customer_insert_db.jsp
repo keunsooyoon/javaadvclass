@@ -45,8 +45,14 @@ if (rset.next()) { // 중복
 		pstmt.setString(6, cust_gender);
 		pstmt.setString(7, cust_email);
 		pstmt.setString(8, LocalDate.now().toString());
-	%>
+	pstmt.executeUpdate();
+	
+	
+	DbConnClose.resourceClose(rset, pstmt, conn);
+	
 }
-%>
+	%>
+
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
 </tr>
 <tr>
 <th>전화번호</th>
-<td><select name="tel_no_gubun" disabled>
+<td><select name="tel_no_gubun">
 			<option selected value="">서비스 구분</option>
 			<option value="010">010</option>
 			<option value="011">011</option>
@@ -46,8 +47,8 @@
 <td><input type="text" name="cust_addr"></td>
 </tr>
 <tr><th>&nbsp; 성별 &nbsp;</th>
-<td><input type="radio" name="cust_gender" value = "M" disabled>남자 &nbsp; 
-    <input type="radio" name="cust_gender" value = "F" disabled>여자 &nbsp; 
+<td><input type="radio" name="cust_gender" value = "M">남자 &nbsp; 
+    <input type="radio" name="cust_gender" value = "F">여자 &nbsp; 
 </td> 
 </tr>
 <tr>

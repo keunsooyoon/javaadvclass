@@ -21,6 +21,7 @@ String cust_email_2 = request.getParameter("cust_email_2");
 if ((cust_email_1.length() == 0) && (cust_email_2.length() == 0)){
 	cust_email = "";
 	}else {
-	cust_email = cust_email_1 + "@" + cust_email_2;			
+	cust_email = cust_email_1 + "@" + cust_email_2;	
+	}		
 %>
 
