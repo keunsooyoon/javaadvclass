@@ -88,3 +88,16 @@ public class ConnectionPool {
 	}
 }
 
+
+
+
+
+
+테이블 마다 1개의 DAO 1개의 DTO 
+DAO data access object     모든 sql 구문들을 통합
+DTO data trnasfer object   해당 테이블과 연결을 위한 객체 
+
+
+
+
+
