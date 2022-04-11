@@ -1,10 +1,11 @@
 package DAO;
 
 import java.sql.*;
-
+import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
+import DTO.FeedDTO;
 import util.ConnectionPool;
 
 public class FeedDAO {
@@ -24,4 +25,6 @@ public class FeedDAO {
 			if(conn !=null) conn.close();
 		}
 	}
+	
+	public ArrayList<FeedDTO> getList() throws NamingException, SQLException {
 }
