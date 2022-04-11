@@ -20,9 +20,20 @@
 <tr><td colspan=2 align=center height=40><input type="submit" value="등록"></td></tr>
 </table>
 </form>
+
+<table align=center>
+<tr><td colspan=2>톡보기</td></tr>
 <% 
 ArrayList<FeedDTO> feeds = (new FeedDAO()).getList();
-
+for (FeedDTO feed : feeds) {
 %>
+<tr><td colspan=2><hr></td></tr>
+<tr><td><%=feed.getId() %></td><td><%=feed.getTs() %></td></tr>
+<tr><td colspan=2><%=feed.getContent() %></td></tr>
+<%     
+}
+%>
+
+</table>
 </body>
 </html>

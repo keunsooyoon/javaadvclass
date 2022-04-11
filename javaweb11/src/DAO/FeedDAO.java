@@ -27,4 +27,29 @@ public class FeedDAO {
 	}
 	
 	public ArrayList<FeedDTO> getList() throws NamingException, SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			String sql="SELECT * FROM feed ORDER BY ts DESC";
+			
+			conn = ConnectionPool.get();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			ArrayList<FeedDTO> feeds = new ArrayList<FeedDTO>();
+		
+			while(rs.next()) {
+				feeds.add(new FeedDTO(rs.getString("id"),
+									  rs.getString("content"),
+									  rs.getString("ts")));
+			}
+			return feeds;
+	} finally {
+		if(rs !=null) rs.close();
+		if(pstmt !=null) pstmt.close();
+		if(conn !=null) conn.close();
+	}
+}
 }
