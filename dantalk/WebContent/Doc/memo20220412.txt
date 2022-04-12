@@ -1,0 +1,49 @@
+
+
+사진 올리기 
+
+1 사진 항목 추가 -> view
+
+<tr><td align=right>이미지</td>
+<td><input type="file" name="image"></td></tr>
+
+2. form action에 추가
+<form action = "feedAdd.jsp" method = "post" enctype="multipart/form-data">
+
+
+여기까지 설정하고 테스트를 해보면 실제 넘어가는 값을 확인할수 없게된다. 
+
+id : null
+content : null
+image : null
+
+하지만 개별적으로 넘어오는 값이 없을뿐 모든 데이터는 하나의 덩어리로 넘어온 것이다. 따라서 디비에 넣기 위해서 각각 분리 추출해야한다. 
+
+
+다행히 일일이 직접 추출하지 않고 추출해주는 라이브러리를 사용하여 추출할수 있다. 
+
+1 https://commons.apache.org/ 사이트로 이동하여 중간즘에 FileUpload 클릭
+
+FileUpload 1.4 - 23 December 2018
+
+Download the binary and source distributions from a mirror site here
+
+
+commons-fileupload-1.4-bin.zip	sha256	pgp
+
+
+다운을 받은 뒤 압축을 해재하여 
+
+commons-fileupload-1.4.jar
+
+파일을 WEB-INF 아래의 lib로 복사한다. 
+
+
+
+2 다시 https://commons.apache.org/ 사이트로 이동하여 중간즘에 IO 클릭
+
+Commons IO 2.11.0 requires a minimum of Java 8 - Download now!
+
+아래 파일 다운로드 
+
+commons-io-2.11.0-bin.zip	sha512	pgp
