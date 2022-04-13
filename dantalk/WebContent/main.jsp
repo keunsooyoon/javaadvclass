@@ -28,9 +28,16 @@
 <% 
 ArrayList<FeedDTO> feeds = (new FeedDAO()).getList();
 for (FeedDTO feed : feeds) {
+	String img = feed.getImages();
+	String imgstr = "";
+	
+ 	if (img != null) {
+ 		imgstr = "<img src='images/" + img + "' width = 240>";
+ 	} 
 %>
 <tr><td colspan=2><hr></td></tr>
 <tr><td><%=feed.getId() %></td><td><%=feed.getTs() %></td></tr>
+<tr><td colspan=2><%=imgstr %></td></tr>
 <tr><td colspan=2><%=feed.getContent() %></td></tr>
 <%     
 }
