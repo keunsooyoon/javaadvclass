@@ -1,16 +1,16 @@
 <%@page import="jdbc.*"%>
-
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 목록</title>
 </head>
 <body>
 	<%!// 선언문
-	String title = "상품 상세";%>
+	String title = "게시판 목록";%>
 	<!-- CSS only -->
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -27,31 +27,61 @@
 		</div>
 	</div>
 
-	<%
-		String pid = request.getParameter("pid");
-	ProductDTO product = (new ProductDAO()).getDetail(pid);
-	%>
-
 	<div class="container">
-		<div class="row">
-			<div class="col-ma-5">
-				<img src="" style="width: 100%">
-			</div>
-			<div class="col-ma-6">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getPdesc()%>
-				<p>
-					<b>상품코드 : <%=product.getPid()%></b>
-				<p>
-					<b>상품가격 : <%=product.getPprice()%></b> 
-				<p>	
-					<a href=""
-						class="btn btn-info">상품주문</a> <a href="productlist.jsp"
-						class="btn btn-secondary">상품목록</a>
-			</div>
+		<div class="row" align="center">
+		
+
+		
+<div class="container my-3">
+    <table class="table">
+        <thead>
+        <tr class="table-dark">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일시</th>
+        </tr>
+        </thead>
+        <tbody>
+
+		<%
+			ArrayList<BoardDTO> boards = (new BoardDAO()).getList();
+			
+		   for (BoardDTO board : boards) {
+		%>
+
+        <tr>
+<td><%=board.getBid() %></td>
+<td><%=board.getBtitle() %></td>
+<td><%=board.getBuser() %></td>
+<td><%=board.getBdate() %></td>
+        </tr>
+
+
+<% } %>
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+		
+
+
 
 		</div>
+		<hr>
 	</div>
+
+
+
+
+
+
+
 
 
 	<%@ include file="/_footer.jsp"%>
@@ -62,7 +92,5 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
-
-
 </body>
 </html>

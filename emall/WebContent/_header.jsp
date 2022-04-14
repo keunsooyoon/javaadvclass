@@ -1,6 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<style>
+@font-face {
+    font-family: 'SANJUGotgam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/SANJUGotgam.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	font-family: 'SANJUGotgam';
+	padding-bottom: 70px;
+	background: url('/img/icon_07(5).png') no-repeat;
+	background-position: center top;
+	/* background-size: cover; */
+	
+}
 
+</style>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">이몰</a>
@@ -42,6 +58,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="#">공지사항</a></li>
             <li><a class="dropdown-item" href="#">질문답변</a></li>
+            <li><a class="dropdown-item" href="#">자유게시판</a></li>
           </ul>
         </li>
       </ul>
