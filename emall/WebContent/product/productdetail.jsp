@@ -1,16 +1,16 @@
 <%@page import="jdbc.*"%>
-<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 목록</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<%!// 선언문
-	String title = "상품 목록";%>
+	String title = "상품 상세";%>
 	<!-- CSS only -->
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -27,34 +27,29 @@
 		</div>
 	</div>
 
+	<%
+		String pid = request.getParameter("pid");
+	ProductDTO product = (new ProductDAO()).getDetail(pid);
+	%>
+
 	<div class="container">
-		<div class="row" align="center">
-		
-		<%
-			ArrayList<ProductDTO> products = (new ProductDAO()).getList();
-			
-		   for (ProductDTO product : products) {
-		%>
-		
-			<div class="col-md-4">
+		<div class="row">
+			<div class="col-ma-5">
 				<img src="" style="width: 100%">
-					<h3><%=product.getPname() %></h3>
-					<p><%=product.getPprice() %>원
-					<p><a href="productdetail.jsp?pid=<%=product.getPid() %>" class="btn btn-secondary" role="button">상세정보</a>
+			</div>
+			<div class="col-ma-6">
+				<h3><%=product.getPname()%></h3>
+				<p><%=product.getPdesc()%>
+				<p>
+					<b>상품코드 : <%=product.getPid()%></b>
+				<p>
+					<b>상품가격 : <%=product.getPprice()%></b> <a href=""
+						class="btn btn-info">상품주문</a> <a href="productlist.jsp"
+						class="btn btn-secondary">상품목록</a>
 			</div>
 
-		<% } %>
-
 		</div>
-		<hr>
 	</div>
-
-
-
-
-
-
-
 
 
 	<%@ include file="/_footer.jsp"%>
@@ -65,5 +60,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+
+
 </body>
 </html>

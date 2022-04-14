@@ -44,5 +44,41 @@ public class ProductDAO {
 		
 		
 	}
+	
+	
+	public ProductDTO getDetail(String pid) throws NamingException, SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			String sql = "SELECT * FROM product WHERE pid = ?";
+			
+			conn = ConnectionPool.get();
+			pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, pid);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			
+			String id = rs.getString(1);
+			String pname = rs.getString(2);
+			String pprice = rs.getString(3);
+			String pdesc = rs.getString(4);
+			String pmanu = rs.getString(5);
+			String pcate = rs.getString(6);
+			String pcondi = rs.getString(7);
+			
+			ProductDTO product = new ProductDTO(id, pname, pprice, pdesc, pmanu, pcate, pcondi);
+			
+			return product;
+			
+	} finally {
+		if(rs != null) rs.close();
+		if(pstmt != null) pstmt.close();
+		if(conn != null) conn.close();
+	}
+	
+	}
 
 }
