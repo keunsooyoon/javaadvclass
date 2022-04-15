@@ -54,7 +54,7 @@ body {
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="#">공지사항</a></li>
             <li><a class="dropdown-item" href="#">질문답변</a></li>
-            <li><a class="dropdown-item" href="#">자유게시판</a></li>
+            <li><a class="dropdown-item" href="/board/boardlist.jsp">자유게시판</a></li>
           </ul>
         </li>
       </ul>
