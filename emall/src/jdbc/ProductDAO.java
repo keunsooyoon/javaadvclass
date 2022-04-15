@@ -9,6 +9,12 @@ import util.ConnectionPool;
 
 public class ProductDAO {
 	
+	public ArrayList<ProductDTO> getAllProducts() {
+		return listOfProducts;
+	}
+	
+	
+	
 	public ArrayList<ProductDTO> getList()
 	throws NamingException, SQLException {
 		
