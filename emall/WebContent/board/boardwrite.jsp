@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%
+	String uid = (String) session.getAttribute("id");
+	if (uid == null) {
+		response.sendRedirect("/user/login.jsp");
+		return;
+	} //세션 정보를 확인해서 로그인 상태인지 확인한후 진입 허용 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,20 +44,31 @@
 	
 	
 	<div class="container" style="padding-top:30px;">
+	
+	
 	  <form name="newProduct" class="form-horizontal"  action="boardwritedb.jsp" method="post" enctype="multipart/form-data">
 	    <div class="form-group  row">
 	       <label class="col-sm-2">제목</label>
 	       	 <div class="col-sm-4">
-	           <input name="title" type="text" class="form-control" placeholder="Enter the Title" >
+	           <input name="btitle" type="text" class="form-control" placeholder="Enter the Title" >
 	    </div>
 	</div>
-	   <div class="form-group  row" style="display:none;">
+	
+<!-- 	   <div class="form-group  row" style="display:none;">
 	      <label class="col-sm-2">작성자</label>
 	         <div class="col-sm-4">
-	           <input name="id" type="text" class="form-control" value="test"placeholder="Enter the name" >
+	           <input name="id" type="text" class="form-control" value="test" placeholder="Enter the name" >
 	   </div>
-	</div>
+	</div> 
+-->
+	<div class="form-group row">
+		<label class="col-sm-2">내용</label>
+		<div class="col-sm-3">
+			<textarea name="bcontent" cols="50" rows="8" class="form-control">
+			</textarea>
+		</div>
 
+	</div>
 <div id="summernote"></div>
 		<div id="summernote"></div>
 
@@ -60,7 +78,7 @@
 				tabsize : 2,
 				height : 100
 			});
-		</script>
+</script>
 
 
        <div class="form-group  row">
