@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="container" align="Center">
-		<form action="productadddb.jsp" method="post">
+		<form action="productadddb.jsp" method="post" enctype="multipart/form-data">
 		
 			<div class="form-group row">
 				<label class="col-sm-2">상품코드</label>
@@ -69,7 +69,7 @@
 				<label class="col-sm-2">상품분류</label>
 				<div class="col-sm-3">
 					<select name="pcate" class="form-select form-select-sm" aria-label=".form-select-sm example">
-						  <option selected>Open this select menu</option>
+						  <option selected>상품 분류를 선택하세요</option>
 						  <option value="스마트폰">스마트폰</option>
 						  <option value="태블릿">태블릿</option>
 						  <option value="컴퓨터">컴퓨터</option>
@@ -105,13 +105,23 @@
 			</div>
 			
 			<div class="form-group row">
+			  <label class="col-sm-2" for="formFileSm">사진 선택</label>
+			  <div class="col-sm-3">
+			  <input name = "pimage" class="form-control form-control-sm" id="formFileSm" type="file">
+			</div>
+			</div>
+			</div>
+			
+			
+			
+			<div class="form-group row" align="center">
 			<div class="col-sm-10">
 				<input type="submit" class="btn btn-primary" value="등록">
 				<input type="reset" class="btn btn-danger" value="취소">
 			</div>	
 			</div>			
 			
-			
+
 			
 		</form>
 	</div>
