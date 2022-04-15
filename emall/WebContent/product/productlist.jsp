@@ -51,12 +51,6 @@
 
 
 
-
-
-
-
-
-
 	<%@ include file="/_footer.jsp"%>
 
 
