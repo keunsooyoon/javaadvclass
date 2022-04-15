@@ -25,7 +25,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" align="Center">
 		<form action="productadddb.jsp" method="post">
 		
 			<div class="form-group row">
