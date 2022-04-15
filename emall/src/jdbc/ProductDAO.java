@@ -32,7 +32,8 @@ public class ProductDAO {
 											rs.getString("pdesc"),
 											rs.getString("pmanu"),
 											rs.getString("pcate"),
-											rs.getString("pcondi")));
+											rs.getString("pcondi"),
+											rs.getString("pimage")));
 			}
 			return products;
 			
@@ -68,8 +69,9 @@ public class ProductDAO {
 			String pmanu = rs.getString(5);
 			String pcate = rs.getString(6);
 			String pcondi = rs.getString(7);
+			String pimage = rs.getString(8);
 			
-			ProductDTO product = new ProductDTO(id, pname, pprice, pdesc, pmanu, pcate, pcondi);
+			ProductDTO product = new ProductDTO(id, pname, pprice, pdesc, pmanu, pcate, pcondi, pimage);
 			
 			return product;
 			

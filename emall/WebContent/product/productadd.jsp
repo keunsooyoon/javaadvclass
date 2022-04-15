@@ -107,7 +107,7 @@
 			<div class="form-group row">
 			  <label class="col-sm-2" for="formFileSm">사진 선택</label>
 			  <div class="col-sm-3">
-			  <input name = "pimage" class="form-control form-control-sm" id="formFileSm" type="file">
+			  <input name = "images" class="form-control form-control-sm" id="formFileSm" type="file">
 			</div>
 			</div>
 			</div>
