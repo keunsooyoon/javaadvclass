@@ -65,6 +65,9 @@
 
         </tbody>
     </table>
+    
+    <a href="/board/boardwrite.jsp">글쓰기</a>
+    
 </div>
 
 

@@ -43,7 +43,6 @@ while(iter.hasNext()) {  // 요소가 있으면 계속 반복 없으면 종료
             //서버에 사진 저장
             String root = application.getRealPath(java.io.File.separator);
             FileUtil.saveImage(root, bimage, bfile);
-            
 	}
 }
 }
@@ -52,7 +51,7 @@ while(iter.hasNext()) {  // 요소가 있으면 계속 반복 없으면 종료
 String buser = (String) session.getAttribute("id");
 BoardDAO dao = new BoardDAO();
 if (dao.insert(btitle, bcontent, buser, bimage)) {
-	response.sendRedirect("productlist.jsp");
+	response.sendRedirect("boardlist.jsp");
 }
 %>
 

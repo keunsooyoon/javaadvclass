@@ -42,6 +42,7 @@
 
 
 <div class="container my-3">
+	<img src="/images/<%=board.getBimage() %>" style="width: 100%">
 
     <h2 class="border-bottom py-2"><%=board.getBtitle() %></h2>
     <div class="card my-3">
