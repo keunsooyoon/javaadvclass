@@ -37,7 +37,7 @@ while(iter.hasNext()) {  // 요소가 있으면 계속 반복 없으면 종료
     String name = item.getFieldName();       //요소의 이름 추출
     
     if(item.isFormField()) { // 이름과 값으로 즉 맵 형태 쌍으로 구성이 되어 있는지 확인
-        String value = item.getString();
+        String value = item.getString("utf-8"); // 한글 처리 중요!!!
         if (name.equals("pid")) pid = value;
         else if (name.equals("pname")) pname = value;
         else if (name.equals("pprice")) pprice = value;

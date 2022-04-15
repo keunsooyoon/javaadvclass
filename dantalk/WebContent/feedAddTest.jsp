@@ -6,7 +6,7 @@
 <%@ page import = "org.apache.commons.fileupload.*" %>
 <%@ page import = "org.apache.commons.fileupload.disk.*" %>
 <%@ page import = "org.apache.commons.fileupload.servlet.*" %>
-
+<%@ page import = "util.FileUtil"%>
 
 <!DOCTYPE html>
 <html>

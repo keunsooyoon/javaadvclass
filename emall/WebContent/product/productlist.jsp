@@ -37,7 +37,7 @@
 		%>
 		
 			<div class="col-md-4">
-				<img src="" style="width: 100%">
+				<img src="/images/<%=product.getPimage() %>" style="width: 100%">
 					<h3><%=product.getPname() %></h3>
 					<p><%=product.getPprice() %>원
 					<p><a href="productdetail.jsp?pid=<%=product.getPid() %>" class="btn btn-secondary" role="button">상세정보</a>

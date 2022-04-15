@@ -115,7 +115,7 @@
 			
 			
 			<div class="form-group row" align="center">
-			<div class="col-sm-10">
+			<div class="col-sm-6">
 				<input type="submit" class="btn btn-primary" value="등록">
 				<input type="reset" class="btn btn-danger" value="취소">
 			</div>	
