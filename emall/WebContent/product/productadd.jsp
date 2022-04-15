@@ -37,49 +37,79 @@
 			</div>
 			
 			<div class="form-group row">
-				<label class="col-sm-2">상품코드</label>
+				<label class="col-sm-2">상품명</label>
 				<div class="col-sm-3">
-					<input type="text" name="pid" class="form-control">
+					<input type="text" name="pname" class="form-control">
 				</div>
 
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2">상품코드</label>
+				<label class="col-sm-2">상품가격</label>
 				<div class="col-sm-3">
-					<input type="text" name="pid" class="form-control">
+					<input type="text" name="pprice" class="form-control">
 				</div>
 
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2">상품코드</label>
+				<label class="col-sm-2">상품설명</label>
 				<div class="col-sm-3">
-					<input type="text" name="pid" class="form-control">
+					<textarea name="pdesc" cols="50" rows="8" class="form-control">
+					</textarea>
 				</div>
 
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2">상품코드</label>
+				<label class="col-sm-2">제조사</label>
 				<div class="col-sm-3">
-					<input type="text" name="pid" class="form-control">
+					<input type="text" name="pmanu" class="form-control">
 				</div>
 
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2">상품코드</label>
+				<label class="col-sm-2">상품분류</label>
 				<div class="col-sm-3">
-					<input type="text" name="pid" class="form-control">
+					<select name="pcate" class="form-select form-select-sm" aria-label=".form-select-sm example">
+						  <option selected>Open this select menu</option>
+						  <option value="스마트폰">스마트폰</option>
+						  <option value="태블릿">태블릿</option>
+						  <option value="컴퓨터">컴퓨터</option>
+						  <option value="노트북">노트북</option>
+						  <option value="주변기기">주변기기</option>
+					</select>
 				</div>
 
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2">상품코드</label>
+				<label class="col-sm-2">상품종류</label>
 				<div class="col-sm-3">
-					<input type="text" name="pid" class="form-control">
+					
+					<div class="form-check form-check-inline">
+					  <input name="pcondi" class="form-check-input" type="radio" id="inlineCheckbox1" value="신상">
+					  <label class="form-check-label" for="inlineCheckbox1">신상</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <input name="pcondi" class="form-check-input" type="radio" id="inlineCheckbox2" value="중고">
+					  <label class="form-check-label" for="inlineCheckbox2">중고</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <input name="pcondi" class="form-check-input" type="radio" id="inlineCheckbox3" value="재고">
+					  <label class="form-check-label" for="inlineCheckbox3">재고</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <input name="pcondi" class="form-check-input" type="radio" id="inlineCheckbox3" value="기타">
+					  <label class="form-check-label" for="inlineCheckbox3">기타</label>
+					</div>
+
 				</div>
 
 			</div>
 			
-			
+			<div class="form-group row">
+			<div class="col-sm-10">
+				<input type="submit" class="btn btn-primary" value="등록">
+				<input type="reset" class="btn btn-danger" value="취소">
+			</div>	
+			</div>			
 			
 			
 			
