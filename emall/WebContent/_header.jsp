@@ -2,18 +2,14 @@
 	pageEncoding="UTF-8"%>
 <style>
 @font-face {
-    font-family: 'SANJUGotgam';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/SANJUGotgam.woff') format('woff');
+    font-family: 'WandohopeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 body {
-	font-family: 'SANJUGotgam';
+	font-family: 'WandohopeB';
 	padding-bottom: 70px;
-	background: url('/img/icon_07(5).png') no-repeat;
-	background-position: center top;
-	/* background-size: cover; */
-	
 }
 
 </style>

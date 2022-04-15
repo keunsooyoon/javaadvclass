@@ -32,26 +32,20 @@
 	ProductDTO product = (new ProductDAO()).getDetail(pid);
 	%>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-ma-5">
-				<img src="" style="width: 100%">
-			</div>
-			<div class="col-ma-6">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getPdesc()%>
-				<p>
-					<b>상품코드 : <%=product.getPid()%></b>
-				<p>
-					<b>상품가격 : <%=product.getPprice()%></b> 
-				<p>	
-					<a href=""
-						class="btn btn-info">상품주문</a> <a href="productlist.jsp"
-						class="btn btn-secondary">상품목록</a>
-			</div>
 
-		</div>
-	</div>
+<div class="container my-3">
+    <!-- 질문 -->
+    <h2 class="border-bottom py-2">{{ question.subject }}</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ question.content }}</div>
+            <div class="d-flex justify-content-end">
+                <div class="badge bg-light text-dark p-2">
+                    {{ question.create_date }}
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 	<%@ include file="/_footer.jsp"%>
