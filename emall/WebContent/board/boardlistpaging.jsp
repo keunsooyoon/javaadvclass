@@ -68,7 +68,7 @@
 			
 			// 테이블 데이터 넣는 SQL
 
-			String sql = "SELECT * FROM board";
+			String sql = "SELECT count(*) FROM board";
 			pstmt = conn.prepareStatement(sql);
 
 			rset = pstmt.executeQuery(); 
@@ -148,7 +148,8 @@
 <td><%=buser %></td>
 <td><%=bdate %></td>
         </tr>
-
+<tr>
+<td colspan=4>
 
 <% }
 		//********************************************페이지 제어
@@ -180,11 +181,19 @@
 				}
 			}
 			
-			
+			if (block_endpage_no < nbr_of_page) {
+				// 다음 블럭 시작 페이지
+				next_block_start_pageno = block_endpage_no + 1;
+				
+				out.print ("&nbsp[<a href='boardlistpaging.jsp?pageno=" + next_block_start_pageno + "'>다음</a>]&nbsp");
+				
+				out.print ("&nbsp[<a href='boardlistpaging.jsp?pageno=" + nbr_of_page + "'>맨끝</a>]&nbsp");
+
+			}
 %>
 
-
-
+</td>
+</tr>
 
 
         </tbody>
