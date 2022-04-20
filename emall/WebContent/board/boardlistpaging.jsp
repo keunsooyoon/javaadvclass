@@ -84,7 +84,7 @@
 			int start_pointer = 0;    			 // DB 검색 시작 위치
 			int cur_page_no = 0;      			 // 현재 페이지 번호
 			int block_nbr = 0;        			 // 블럭 번호
-			int blcok_start_page_no = 0; 		 // 블럭 시작 페이지 번호
+			int block_start_page_no = 0; 		 // 블럭 시작 페이지 번호
 			int block_endpage_no = 0; 			 // 블럭 끝 페이지 번호
 			int previous_block_start_pageno = 0; //이전 블럭 시작 페이지 번호
 			int next_block_start_pageno = 0;     //다음 블럭 시작 페이지 번호
@@ -153,9 +153,32 @@
 <% }
 		//********************************************페이지 제어
 		
+			//블럭 번호
+			block_nbr = ((cur_page_no - 1) / PAGE_PER_BLOCK) + 1;
+			//블럭 시작 페이지 번호
+			block_start_page_no = ((block_nbr - 1) * PAGE_PER_BLOCK) + 1;
+			//블럭 끝 페이지 번호
 			
+			if (block_nbr > 1) {
+				out.print ("&nbsp[<a href='boardlistpaging.jsp?pageno=1'>" + "맨처음</a>]&nbsp");
 			
+				//이전 블록 시작 페이지
+				previous_block_start_pageno = block_start_page_no - PAGE_PER_BLOCK;
+				out.print ("&nbsp[<a href='boardlistpaging.jsp?pageno=" + previous_block_start_pageno + "'>이전</a>]&nbsp");
+
+			}
 			
+			for (int pgn = block_start_page_no; pgn <= block_endpage_no; pgn++) {
+				if (pgn > nbr_of_page) {
+					break;
+				}
+				
+				if (pgn == cur_page_no) {
+					out.print("&nbsp" + pgn + "&nbsp");
+				}else {
+					out.print("&nbsp[" + "<a href='boardlistpaging.jsp?" + "pageno=" + pgn + "'>" + pgn + "</a>]&nbsp");
+				}
+			}
 			
 			
 %>
