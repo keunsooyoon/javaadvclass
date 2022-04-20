@@ -74,6 +74,63 @@
 			rset = pstmt.executeQuery(); 
 			
 			
+			//필요 변수들 선언
+			int LINE_PER_PAGE = 1;    			 //페이지당 출력 줄수
+			int PAGE_PER_BLOCK = 2;   			 //블럭당 페이지 수
+			
+			int nbr_of_row = 0;       			 //게시물의 총수/ 사람의 총수/ 테이블 하나 전체의 갯수
+			int nbr_of_page = 0;      			 //총 페이지 수
+			
+			int start_pointer = 0;    			 // DB 검색 시작 위치
+			int cur_page_no = 0;      			 // 현재 페이지 번호
+			int block_nbr = 0;        			 // 블럭 번호
+			int blcok_start_page_no = 0; 		 // 블럭 시작 페이지 번호
+			int block_endpage_no = 0; 			 // 블럭 끝 페이지 번호
+			int previous_block_start_pageno = 0; //이전 블럭 시작 페이지 번호
+			int next_block_start_pageno = 0;     //다음 블럭 시작 페이지 번호
+			
+			
+			// 총 게시물 개수(총 회원의 수, 테이블 전체의 수) 계산
+			
+			rset.next();
+			nbr_of_row = Integer.parseInt(rset.getString("count(*)"));
+			
+			// 총 페이지 수 계산 ...............ceil 올림   floor 버림 round 반올림
+			
+			nbr_of_page = (int)Math.ceil((float)nbr_of_row / LINE_PER_PAGE);
+			
+			// 검색 페이지 확인
+			if  (request.getParameter("pageno") == null) {
+				//맨처음 검색
+				cur_page_no = 1;
+			} else if (nbr_of_page < Integer.parseInt(request.getParameter("pageno"))) {
+				// DB검색 시작 위치 계산
+				cur_page_no = nbr_of_page;
+			} else {
+				//특정 페이지 검색 
+				cur_page_no = Integer.parseInt(request.getParameter("pageno"));
+			}
+			
+			
+			// DB 검색 시작 위치와 갯수
+			start_pointer = (cur_page_no - 1) * LINE_PER_PAGE;
+			
+			//*****************************************************************
+			//SQL 처리
+			
+			sql = "SELECT * FROM board ORDER BY bid ASC LIMIT ?,?";
+			pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1,start_pointer);
+				pstmt.setInt(2,LINE_PER_PAGE);
+			rset = pstmt.executeQuery();
+			
+			if (!rset.isBeforeFirst())
+				out.print("<script>alert('데이터가 없습니다. ');"
+				+ "history.back();"
+				+ "</script>");
+			
+			
+			
 			int no = 1;
 			while(rset.next()) {
 				
@@ -93,7 +150,18 @@
         </tr>
 
 
-<% } %>
+<% }
+		//********************************************페이지 제어
+		
+			
+			
+			
+			
+			
+%>
+
+
+
 
 
         </tbody>
