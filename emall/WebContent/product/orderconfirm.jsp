@@ -1,5 +1,5 @@
 <%@page import="jdbc.*"%>
-
+<% request.setCharacterEncoding("utf-8"); %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
@@ -9,6 +9,7 @@
 		return;
 	} //세션 정보를 확인해서 로그인 상태인지 확인한후 진입 허용 
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 </head>
 <body>
 	<%!// 선언문
-	String title = "상품 상세";%>
+	String title = "상품 주문";%>
 	<!-- CSS only -->
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -34,32 +35,31 @@
 		</div>
 	</div>
 
-	<%
-		String pid = request.getParameter("pid");
-	ProductDTO product = (new ProductDAO()).getDetail(pid);
-	%>
+<%
+	String pid = request.getParameter("pid");
+	String pprice = request.getParameter("pprice");
+	String pname = request.getParameter("pname");
 
-	<div class="container">
-		<div class="row">
-			<div class="col-ma-5">
-				<img src="/images/<%=product.getPimage() %>" style="width: 100%">
-			</div>
-			<div class="col-ma-6">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getPdesc()%>
-				<p>
-					<b>상품코드 : <%=product.getPid()%></b>
-				<p>
-					<b>상품가격 : <%=product.getPprice()%></b> 
-				<p>	
-						<a href="orderconfirm.jsp?pid=<%=product.getPid() %>&pprice=<%=product.getPprice() %>&pname=<%=product.getPname()%>" class="btn btn-success" role="button">주문</a>
+%>
+<table class="table table-hover">			
+			<tr>
+				<th class="text-center">제품아이디</th>
+				<th class="text-center">제품가격</th>
+				<th class="text-center">제품이름</th>
+			</tr>
+			<tr>
+				<td class="text-center"><em><%=pid%> </em></td>
+				<td class="text-center"><%=pprice%>원 </td>
+				<td class="text-center"><%=pname%></td>
+			</tr>
 
-						
-						<a href="productlist.jsp" class="btn btn-secondary">상품목록</a>
-			</div>
+			</table>			
+				<a href="./shippingThanks.jsp"  class="btn btn-success" role="button"> 주문 완료 </a>
+				<a href="./shippingCancel.jsp" class="btn btn-secondary" role="button"> 취소 </a>		
+				
+				
 
-		</div>
-	</div>
+
 
 
 	<%@ include file="/_footer.jsp"%>
