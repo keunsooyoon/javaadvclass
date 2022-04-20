@@ -159,6 +159,8 @@
 			//블럭 시작 페이지 번호
 			block_start_page_no = ((block_nbr - 1) * PAGE_PER_BLOCK) + 1;
 			//블럭 끝 페이지 번호
+			block_endpage_no = (block_start_page_no + PAGE_PER_BLOCK) - 1;
+	
 			
 			if (block_nbr > 1) {
 				out.print ("&nbsp[<a href='boardlistpaging.jsp?pageno=1'>" + "맨처음</a>]&nbsp");
