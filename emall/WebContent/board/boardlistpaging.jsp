@@ -34,7 +34,7 @@
 		
 
 		
-<div class="container my-3">
+<div class="container my-3" align="center">
     <table class="table">
         <thead>
         <tr class="table-dark">
@@ -75,7 +75,7 @@
 			
 			
 			//필요 변수들 선언
-			int LINE_PER_PAGE = 1;    			 //페이지당 출력 줄수
+			int LINE_PER_PAGE = 5;    			 //페이지당 출력 줄수
 			int PAGE_PER_BLOCK = 2;   			 //블럭당 페이지 수
 			
 			int nbr_of_row = 0;       			 //게시물의 총수/ 사람의 총수/ 테이블 하나 전체의 갯수
@@ -149,7 +149,7 @@
 <td><%=bdate %></td>
         </tr>
 <tr>
-<td colspan=4>
+<td colspan=4 align = "center">
 
 <% }
 		//********************************************페이지 제어
