@@ -24,13 +24,7 @@ function CheckForm() {
 		alert("비번을 입력해 주세요");
 		form.pw.focus();
 		return false;
-	}
-	form.submit();
-}
-
-</script>
-
-
+	
 <form name="loginForm">
 아이디 : <input type="text" name="id">
 비   번 : <input type="password" name="pw">
