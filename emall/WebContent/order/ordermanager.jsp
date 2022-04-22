@@ -37,6 +37,13 @@
 
 		
 <div class="container my-3">
+<div align ="right">
+<a href="orderstatus.jsp?status="1">[입금전]</a>
+<a href="orderstatus.jsp?status="1">[입금완료]</a>
+<a href="orderstatus.jsp?status="1">[배송중]</a>
+<a href="orderstatus.jsp?status="1">[배송완료]</a>
+</div>
+
 <table class="table table-striped table-hover">
         <thead>
         <tr class="table-dark">
