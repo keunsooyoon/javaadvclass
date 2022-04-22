@@ -57,7 +57,7 @@ public class OrderDAO {
 		
 		ArrayList<OrderDTO> orders = new ArrayList<OrderDTO>();
 		
-		while(rs.next()) {
+		while(rs.next()) { 
 			orders.add(new OrderDTO(rs.getString("oid"),
 									rs.getString("opid"),
 									rs.getString("ouid"),
