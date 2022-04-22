@@ -40,6 +40,38 @@ public class OrderDAO {
 		return orders;
 	}
 	
+	public ArrayList<OrderDTO> getList(String status)
+	throws NamingException, SQLException {
+	
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		conn = ConnectionPool.get();
+		
+		String sql = "SELECT * FROM orders where ostatus = ?";
+		
+		pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, status);
+		rs = pstmt.executeQuery();
+		
+		ArrayList<OrderDTO> orders = new ArrayList<OrderDTO>();
+		
+		while(rs.next()) {
+			orders.add(new OrderDTO(rs.getString("oid"),
+									rs.getString("opid"),
+									rs.getString("ouid"),
+									rs.getString("opname"),
+									rs.getString("oprice"),
+									rs.getString("ostatus"),
+									rs.getString("odate"),
+									rs.getString("ograde"),
+									rs.getString("ocomm")));
+		}
+
+		return orders;
+	}
+	
 	// 구매 시작 매서드  status 1  고객
 	public int insert() {
 	

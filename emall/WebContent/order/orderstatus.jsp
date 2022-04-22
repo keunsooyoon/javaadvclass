@@ -61,7 +61,9 @@
         <tbody>
 
 		<%
-			ArrayList<OrderDTO> orders = (new OrderDAO()).getList();
+		
+			String status = request.getParameter("status");
+			ArrayList<OrderDTO> orders = (new OrderDAO()).getList(status);
 			
 		   for (OrderDTO order : orders) {
 		%>
@@ -83,12 +85,14 @@
 <% } %>
 
 
+
         </tbody>
     </table>
     
     <a href="/product/productadd.jsp">제품 등록</a>
     
 </div>
+
 
 
 
