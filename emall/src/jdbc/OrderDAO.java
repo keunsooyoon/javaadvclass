@@ -2,6 +2,11 @@ package jdbc;
 
 public class OrderDAO {
 	
+	public int getList() {
+		
+		return 1;
+	}
+	
 	// 구매 시작 매서드  status 1  고객
 	public int insert() {
 	
@@ -26,6 +31,8 @@ public class OrderDAO {
 	
 	return 1;
 	}
+	
+	
 	
 	
 }
