@@ -1,10 +1,43 @@
 package jdbc;
 
+import java.sql.*;
+import java.util.ArrayList;
+
+import javax.naming.NamingException;
+
+import util.ConnectionPool;
+
 public class OrderDAO {
 	
-	public int getList() {
+	public ArrayList<OrderDTO> getList()
+	throws NamingException, SQLException {
+	
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
-		return 1;
+		conn = ConnectionPool.get();
+		
+		String sql = "SELECT * FROM orders";
+		
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		
+		ArrayList<OrderDTO> orders = new ArrayList<OrderDTO>();
+		
+		while(rs.next()) {
+			orders.add(new OrderDTO(rs.getString("oid"),
+									rs.getString("opid"),
+									rs.getString("ouid"),
+									rs.getString("opname"),
+									rs.getString("oprice"),
+									rs.getString("ostatus"),
+									rs.getString("odate"),
+									rs.getString("ograde"),
+									rs.getString("ocomm")));
+		}
+
+		return orders;
 	}
 	
 	// 구매 시작 매서드  status 1  고객
