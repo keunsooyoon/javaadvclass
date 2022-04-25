@@ -68,5 +68,26 @@ public class MemoDAO {
 	}
 	
 	
-	
+	public boolean delete(String mid) throws NamingException, SQLException	{
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+		String sql = "UPDATE memo SET mdone = '0' WHERE mid = ?";
+		conn = ConnectionPool.get();
+		
+		pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
+
+		
+		int result = pstmt.executeUpdate();
+		
+		return (result == 1) ? true : false;
+		} finally {
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+
+}
 }

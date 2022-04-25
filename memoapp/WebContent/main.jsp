@@ -42,7 +42,7 @@
   <div class="card-body">
     <h5 class="card-title"><%=memo.getMemo() %></h5>
 
-    <a href="delmemo.jsp?mid=<%=memo.getMid() %>" class="btn btn-secondary">삭제</a>
+    <a href="memodel.jsp?mid=<%=memo.getMid() %>" class="btn btn-secondary">삭제</a>
   </div>
   <div class="card-footer text-muted">
     <%=memo.getMdate() %>
