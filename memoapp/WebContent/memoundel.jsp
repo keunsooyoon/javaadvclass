@@ -9,7 +9,7 @@
 	
 	MemoDAO dao = new MemoDAO();                 // 객체 생성 ?? 매서드를 호출하기위해서
 
-	dao.delete(mid);                       // 메모삭제 매서드 호출
+	dao.undelete(mid);                       // 메모삭제 매서드 호출
 	
 	response.sendRedirect("main.jsp");           // 메모 db에 삽입 후에 다시 main으로 돌아가 메모 목록 보기 
 

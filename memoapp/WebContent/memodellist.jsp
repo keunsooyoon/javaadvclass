@@ -19,7 +19,7 @@
 
 
 <%
-	ArrayList<MemoDTO> memos = (new MemoDAO()).getList();
+	ArrayList<MemoDTO> memos = (new MemoDAO()).getdelList();
 
 	for (MemoDTO memo : memos) {
 %>
@@ -32,7 +32,7 @@
   <div class="card-body">
     <h5 class="card-title"><%=memo.getMemo() %></h5>
 
-    <a href="memodel.jsp?mid=<%=memo.getMid() %>" class="btn btn-secondary">삭제</a>
+    <a href="memoundel.jsp?mid=<%=memo.getMid() %>" class="btn btn-secondary">복구</a>
   </div>
   <div class="card-footer text-muted">
     <%=memo.getMdate() %>
