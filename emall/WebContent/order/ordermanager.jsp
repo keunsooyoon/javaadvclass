@@ -69,7 +69,7 @@
         <tr>
 <td><%=order.getOid() %></td>
 <td><%=order.getOpid() %></td>
-<td><%=order.getOuid() %></td>
+<td><a href="orderuid.jsp?ouid="<%=order.getOuid() %>"><%=order.getOuid() %></a></td>
 <td><%=order.getOpname() %></td>
 <td><%=order.getOprice() %></td>
 <td><%=order.getOdate() %></td>
