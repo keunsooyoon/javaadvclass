@@ -1,6 +1,7 @@
 package jdbc;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
@@ -32,8 +33,39 @@ public class MemoDAO {
 
 }
 
-	
-	
+	public ArrayList<MemoDTO> getList()
+	throws NamingException, SQLException {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			String sql = "SELECT * FROM memo WHERE uid='test' AND mdone='1' ORDER BY mdate DESC";
+			
+			conn = ConnectionPool.get();
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			ArrayList<MemoDTO> memos = new ArrayList<MemoDTO>();
+			
+			while (rs.next()) {
+				memos.add(new MemoDTO(rs.getString("mid"),
+									  rs.getString("uid"),
+									  rs.getString("memo"),
+									  rs.getString("mdone"),
+									  rs.getString("mdate")));
+			}
+			return memos;
+			
+		} finally {
+			if(rs!=null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+		
+	}
 	
 	
 	
