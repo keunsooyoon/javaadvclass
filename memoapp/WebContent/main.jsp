@@ -14,26 +14,7 @@
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<div align="center">
-
-<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-  <a href="main.jsp" class="btn btn-danger">메모 보기</a>
-  <a href="memodellist.jsp" class="btn btn-danger">삭제 메모</a>
-
-  <div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      회원 메뉴
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <li><a class="dropdown-item" href="#">회원가입</a></li>
-      <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
-    </ul>
-  </div>
-</div>
-
-</div>
-
-
+<%@ include file = "menu.jsp" %>
 
 <form action = "memoadd.jsp" method="post">
 <div class="alert alert-secondary" role="alert">
