@@ -11,12 +11,14 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
   </head>
+
+  
   <body class="text-center">
  <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   
-  
-    
+
+<div>
 <main class="form-signin">
   <form action ="useradd.jsp">
     <img class="mb-4" src="https://austin.sogang.ac.kr/dataview/board/editor/20190703_1113_3410001.jpg" alt="" width="72" height="57">
@@ -40,7 +42,7 @@
     <p class="mt-5 mb-3 text-muted">&copy; Austin 2022</p>
   </form>
 </main>
-
+</div>
 
 
 <!-- JavaScript Bundle with Popper -->
