@@ -1,0 +1,38 @@
+
+1. 카페24 회원 가입
+		https://www.cafe24.com/
+
+2. JSP Tomcat 호스팅 신청 (최저가 7200원)
+
+		https://hosting.cafe24.com/?controller=product_page&type=special&page=tomcat
+
+3. Heidi SQL 설정
+		카페 24에 내가 사용 중인 ip 등록
+		https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=1&acr=1&acq=ip+%EC%A3%BC%EC%86%8C&qdt=0&ie=utf8&query=ip+%EC%A3%BC%EC%86%8C+%ED%99%95%EC%9D%B8
+		
+		heidi 세션 생성 cafe24
+		사용자 : cafe24 로그인아이디
+		암  호 : ftp/db 암호
+		
+		DB생성 후 Table 생성
+		
+4. FileZilla
+
+	https://filezilla-project.org/ 
+	
+	FileZilla 로 cafe24 접속 후 
+	
+	war 파일을 만든 후 ftp 서버에 업로드 (위치는 ROOT 폴더가 있는 바로 그 폴더)
+	ROOT 폴더를 삭제 후  업로드한 war의 이름을 ROOT.war 변경 -> 자동풀림
+	
+	tomcat을 재시동해야 하는 경우가 발생하면(자주 발생) 
+	cafe24에서 tomcat재시동 또는 putty 로 재시동
+	
+	 ./tomcat/bin/shutdown.sh    탐캣 종료
+	 ./tomcat/bin/startup.sh     탐캣 실행
+		
+		
+		
+		
+		
+		
