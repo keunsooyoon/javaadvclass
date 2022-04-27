@@ -7,7 +7,7 @@
 <title>이메일 전송</title>
 </head>
 <body>
-<form action = "emailsend.jsp" method ="post">
+<form action = "emailsend2.jsp" method ="post">
 보내는 사람 <input type="text" name="from"><br>
 받는   사람 <input type="text" name="to"><br>
 제         목<input type="text" name="subject"><br>

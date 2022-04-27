@@ -1,7 +1,14 @@
+<%@page import="smtp.NaverSMTP"%>
+<%@page import="java.io.FileReader"%>
+<%@page import="java.io.BufferedReader"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%
+request.setCharacterEncoding("utf-8");       //한글처리
+
+
 
 //넘겨받은 변수 처리
 
@@ -22,8 +29,32 @@ if (format.equals("text")) {
 	String htmlContent = "";
 	try {
 		String templatePath = application.getRealPath("/email/emailform.html");
+		BufferedReader br = new BufferedReader(new FileReader(templatePath));
+		
+		String oneLine;
+		while (( oneLine = br.readLine()) != null) {
+			htmlContent += oneLine + "\n";
+		}
+		br.close();
+	}catch (Exception e) {
+		e.printStackTrace();
 	}
+	
+	// 템플릿의 내용 교체
+	htmlContent = htmlContent.replace("__CONTENT__", content);
+	emailInfo.put("content", htmlContent);
+	emailInfo.put("format","text/html;charset=UTF-8");
 }
+
+try {
+	NaverSMTP smtpServer = new NaverSMTP();
+	smtpServer.emailSending(emailInfo);
+	out.print("전송 성공");
+} catch (Exception e) {
+	out.print("전송 실패");
+	e.printStackTrace();
+}
+
 
 %>
 
