@@ -1,0 +1,29 @@
+이메일 발송
+
+이메일작성.jsp -> 이메일처리.jsp ->
+네이버 SMTP서버 ->
+인터넷
+
+smtp : Simple Mail Transfer Protocol
+
+1. 네이버 smtp 설정
+
+네이버 메일함
+왼쪽 하단  [환경설정]
+상단 가운데 [POP3/IMAP 설정]
+[POP3/SMTP 설정]
+POP3/SMTP 사용 -> 사용함
+
+[아래 정보 저장]
+
+POP 서버명 : pop.naver.comSMTP 
+
+서버명 : smtp.naver.comPOP 포트 : 995, 
+보안연결(SSL) 필요SMTP 포트 : 465, 
+보안 연결(SSL) 필요
+
+아이디 : austiny
+비밀번호 : 네이버 로그인 비밀번호
+
+
+

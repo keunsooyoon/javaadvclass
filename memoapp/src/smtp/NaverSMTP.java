@@ -1,73 +1,3 @@
-이메일 발송
-
-이메일작성.jsp -> 이메일처리.jsp ->
-네이버 SMTP서버 ->
-인터넷
-
-smtp : Simple Mail Transfer Protocol
-
-1. 네이버 smtp 설정
-
-네이버 메일함
-왼쪽 하단  [환경설정]
-상단 가운데 [POP3/IMAP 설정]
-[POP3/SMTP 설정]
-POP3/SMTP 사용 -> 사용함
-
-[아래 정보 저장]
-
-POP 서버명 : pop.naver.comSMTP 
-
-서버명 : smtp.naver.comPOP 포트 : 995, 
-보안연결(SSL) 필요SMTP 포트 : 465, 
-보안 연결(SSL) 필요
-
-아이디 : austiny
-비밀번호 : 네이버 로그인 비밀번호
-
-
-2. 이메일 입력 폼 작성
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>이메일 전송</title>
-</head>
-<body>
-<form action = "emailsend.jsp" method ="post">
-보내는 사람 <input type="text" name="from"><br>
-받는   사람 <input type="text" name="to"><br>
-제         목<input type="text" name="subject"><br>
-형        식<input type="radio" name="format" value="text" checked>TEXT
-<input type="radio" name="format" value="html" checked>HTML<br>
-본        문<br>
-<textarea name="content" cols="60" rows="10"></textarea><br>
-<br>
-<button type="submit">전송</button>
-</form>
-</body>
-</html>
-
-
-
-3. 라이브러리 설치 (2개)
-
-https://mvnrepository.com/artifact/javax.mail/mail/1.4.7
-
-mail-1.4.7.jar 다운로드
-
-https://mvnrepository.com/artifact/javax.activation/activation/1.1.1
-
-activation-1.1.1.jar 다운로드
-
-
-4. src > smtp > NaverSMTP.java 작성
-
-
-
 package smtp;
 
 import java.util.Map;
@@ -104,7 +34,7 @@ public class NaverSMTP {
         auth = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("네이버 아이디", "네이버 패스워드");
+                return new PasswordAuthentication("austiny", ".hwwZ9wMT7@*fNw");
             }
         };
     }
@@ -127,13 +57,3 @@ public class NaverSMTP {
         Transport.send(msg);
     }
 }
-
-
-
-
-
-
-
-
-
-
