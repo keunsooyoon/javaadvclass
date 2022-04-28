@@ -10,13 +10,13 @@
 
 <script>
 function chatWinOpen() {
-	var id = document.getElementById("chatid");
+	var id = document.getElementById("chatId");
 	if (id.value == "") {
 		alert("대화명을 입력하세요");
 		id.focus();
 		return;
 	}
-	window.open("chatwindow.jsp?chatid=" + id.value, "", "width=320, height=400");
+	window.open("chatwindow.jsp?chatId=" + id.value, "", "width=320, height=400");
 	id.value = "";
 }
 
@@ -25,7 +25,7 @@ function chatWinOpen() {
 
 <h2> 대화명을 입력하시고 채팅방으로 입장하세요</h2>
 
-대화명 : <input type="text" id="chatid" >
+대화명 : <input type="text" id="chatId" >
 <button onclick="chatWinOpen();">채팅 입장</button>
 </body>
 </html>
