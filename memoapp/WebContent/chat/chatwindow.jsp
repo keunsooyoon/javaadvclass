@@ -62,6 +62,7 @@ webSocket.onerror = function(event) {
 };
 
 
+
 //메시지를 받았을 때 실행
 
 webSocket.onmessage = function(event) {

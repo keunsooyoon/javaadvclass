@@ -10,6 +10,7 @@ request.setCharacterEncoding("utf-8");       //한글처리
 
 
 
+
 //넘겨받은 변수 처리
 
 Map<String, String> emailInfo = new HashMap<String, String>();
